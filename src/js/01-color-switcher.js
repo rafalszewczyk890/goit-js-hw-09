@@ -21,5 +21,3 @@ function handleStop() {
 
 startBtn.addEventListener('click', handleStart);
 stopBtn.addEventListener('click', handleStop);
-
-//comment for purpose, can delete
