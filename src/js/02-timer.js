@@ -48,6 +48,7 @@ function counterStart() {
   let timeLeft = chosenTime - new Date();
   let counterInterval = setInterval(() => {
     let convertedTime = timeLeft -= 1000;
+    console.log(convertedTime);
     hourSpan.textContent = addLeadingZero(convertMs(convertedTime).hours);
     minuteSpan.textContent = addLeadingZero(convertMs(convertedTime).minutes);
     secondSpan.textContent = addLeadingZero(convertMs(convertedTime).seconds);
