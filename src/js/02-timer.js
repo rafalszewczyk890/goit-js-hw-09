@@ -49,10 +49,14 @@ function counterStart() {
   let timeLeft = chosenTime - new Date();
   setInterval(() => {
     let convertedTime = convertMs((timeLeft -= 1000));
-    daySpan.textContent = addLeadingZero(convertedTime.days);
     hourSpan.textContent = addLeadingZero(convertedTime.hours);
     minuteSpan.textContent = addLeadingZero(convertedTime.minutes);
     secondSpan.textContent = addLeadingZero(convertedTime.seconds);
+    if (convertedTime.days <= 9) {
+      daySpan.textContent = addLeadingZero(convertedTime.days);
+    } else {
+      daySpan.textContent = convertedTime.days;
+    }
   }, 1000);
 }
 
