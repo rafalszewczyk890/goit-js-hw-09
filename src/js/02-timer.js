@@ -11,6 +11,7 @@ const minuteSpan = document.querySelector('span[data-minutes]');
 const secondSpan = document.querySelector('span[data-seconds]');
 
 const timeInput = document.querySelector('#datetime-picker');
+
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -19,7 +20,7 @@ const options = {
   onClose(selectedDates) {
     chosenTime = selectedDates[0];
     if (selectedDates[0] <= new Date()) {
-      Notiflix.Notify.warning('Please choose a date in the future');
+      Notiflix.Notify.failure('Please choose a date in the future');
       startBtn.disabled = true;
     } else {
       startBtn.disabled = false;
@@ -36,7 +37,6 @@ function convertMs(ms) {
   const minute = second * 60;
   const hour = minute * 60;
   const day = hour * 24;
-
   const days = Math.floor(ms / day);
   const hours = Math.floor((ms % day) / hour);
   const minutes = Math.floor(((ms % day) % hour) / minute);
