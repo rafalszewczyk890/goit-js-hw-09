@@ -56,7 +56,7 @@ function counterStart() {
     } else {
       daySpan.textContent = convertMs(convertedTime).days;
     }
-    if (convertedTime.seconds < 1000) {
+    if (convertedTime <= 1000) {
       clearInterval(counterInterval);
     }
   }, 1000);
