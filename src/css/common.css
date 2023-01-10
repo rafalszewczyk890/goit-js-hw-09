@@ -16,3 +16,29 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.timer {
+  display: flex;
+  gap: 30px;
+  background-color: #21212111;
+  border-radius: 15px;
+  width: fit-content;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.value {
+  text-align: center;
+  font-family: 'Press Start 2P';
+  font-size: 20px;
+}
+
+.label {
+  font-family: 'Press Start 2P';
+  font-size: 24px;
+}

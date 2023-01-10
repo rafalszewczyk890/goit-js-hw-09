@@ -9,6 +9,7 @@ const daySpan = document.querySelector('span[data-days]');
 const hourSpan = document.querySelector('span[data-hours]');
 const minuteSpan = document.querySelector('span[data-minutes]');
 const secondSpan = document.querySelector('span[data-seconds]');
+const timerDiv = document.querySelector('.timer');
 
 const options = {
   enableTime: true,
