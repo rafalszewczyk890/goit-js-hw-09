@@ -27,6 +27,10 @@ const options = {
   },
 };
 
+function addLeadingZero(value) {
+  return value.toString().padStart(2, '0');
+}
+
 function convertMs(ms) {
   const second = 1000;
   const minute = second * 60;
@@ -45,10 +49,10 @@ function counterStart() {
   let timeLeft = chosenTime - new Date();
   setInterval(() => {
     let convertedTime = convertMs((timeLeft -= 1000));
-    daySpan.textContent = convertedTime.days;
-    hourSpan.textContent = convertedTime.hours;
-    minuteSpan.textContent = convertedTime.minutes;
-    secondSpan.textContent = convertedTime.seconds;
+    daySpan.textContent = addLeadingZero(convertedTime.days);
+    hourSpan.textContent = addLeadingZero(convertedTime.hours);
+    minuteSpan.textContent = addLeadingZero(convertedTime.minutes);
+    secondSpan.textContent = addLeadingZero(convertedTime.seconds);
   }, 1000);
 }
 
