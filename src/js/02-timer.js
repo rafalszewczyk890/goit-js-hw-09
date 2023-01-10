@@ -47,16 +47,16 @@ function convertMs(ms) {
 function counterStart() {
   let timeLeft = chosenTime - new Date();
   let counterInterval = setInterval(() => {
-    let convertedTime = convertMs((timeLeft -= 1000));
-    hourSpan.textContent = addLeadingZero(convertedTime.hours);
-    minuteSpan.textContent = addLeadingZero(convertedTime.minutes);
-    secondSpan.textContent = addLeadingZero(convertedTime.seconds);
-    if (convertedTime.days < 10) {
-      daySpan.textContent = addLeadingZero(convertedTime.days);
+    let convertedTime = timeLeft -= 1000;
+    hourSpan.textContent = addLeadingZero(convertMs(convertedTime).hours);
+    minuteSpan.textContent = addLeadingZero(convertMs(convertedTime).minutes);
+    secondSpan.textContent = addLeadingZero(convertMs(convertedTime).seconds);
+    if (convertMs(convertedTime).days < 10) {
+      daySpan.textContent = addLeadingZero(convertMs(convertedTime).days);
     } else {
-      daySpan.textContent = convertedTime.days;
+      daySpan.textContent = convertMs(convertedTime).days;
     }
-    if (convertedTime.seconds < 1) {
+    if (convertedTime.seconds < 1000) {
       clearInterval(counterInterval);
     }
   }, 1000);
