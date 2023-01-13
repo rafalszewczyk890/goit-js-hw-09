@@ -21,7 +21,7 @@ form.addEventListener('submit', event => {
   event.preventDefault();
   setTimeout(() => {
     let speed = Number(form.step.value);
-    for (i = 0; i < form.amount.value; i++) {
+    for (i = 1; i <= form.amount.value; i++) {
       let prom = createPromise(i, speed);
       prom
         .then(value => {
