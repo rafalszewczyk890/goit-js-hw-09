@@ -16,17 +16,17 @@ function createPromise(position, delay) {
 }
 
 const form = document.querySelector('.form');
+let delay = form.delay.value;
 
 form.addEventListener('submit', event => {
   event.preventDefault();
   setTimeout(() => {
-    let speed = Number(form.step.value);
+    let step = Number(form.step.value);
     for (i = 1; i <= form.amount.value; i++) {
       if (i == 1) {
-        speed = 0;
+        step = Number(form.delay.value);
       }
-      let prom = createPromise(i, speed);
-      prom
+      createPromise(i, step)
         .then(value => {
           Notiflix.Notify.success(
             `✅ Fulfilled promise ${value.position} in ${value.delay}ms`
@@ -37,7 +37,7 @@ form.addEventListener('submit', event => {
             `❌ Rejected promise ${value.position} in ${value.delay}ms`
           );
         });
-      speed = speed + Number(form.step.value);
+      step = step + Number(form.step.value);
     }
-  }, form.delay.value);
+  }, delay);
 });
