@@ -22,7 +22,7 @@ form.addEventListener('submit', event => {
   event.preventDefault();
   setTimeout(() => {
     let step = Number(form.step.value);
-    for (i = 1; i <= form.amount.value; i++) {
+    for (let i = 1; i <= form.amount.value; i++) {
       if (i == 1) {
         step = Number(form.delay.value);
       }
@@ -41,5 +41,3 @@ form.addEventListener('submit', event => {
     }
   }, delay);
 });
-
-//test
